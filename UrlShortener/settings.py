@@ -29,21 +29,16 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-DJANGO_APPS = [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
-
-THIRD_APPS = [
     'bootstrap4',
     'Shortener',
 ]
-
-INSTALLED_APPS = DJANGO_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+BASE_LIST = '0123456789abcdefghijklmnñopqrstuvwxyz./:'
+BASE_DICT = dict((c, idx) for idx,c in enumerate(BASE_LIST))
+BASE_URL = 'http://127.0.0.1:8090'
