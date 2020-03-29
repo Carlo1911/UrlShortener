@@ -29,7 +29,7 @@ def redirect_short_url(request, short_url):
     redirect = settings.BASE_URL + '/shorten'
     try:
         URL_ID = URLData.objects.all().filter(ShortURL=short_url)[0].URLID
-        redirect_url = base_enconde(int(URL_ID))
+        redirect_url = base_encode(int(URL_ID))
     except Exception as e:
         print(e)
     return redirect(redirect_url)
