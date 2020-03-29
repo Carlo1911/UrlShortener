@@ -25,7 +25,7 @@ SECRET_KEY = 'nbzyb4q%e$@_!p)*2cn60av@w19i)8m+2o8s9sk1-m*uw$*nn8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'crispy_forms',
     'Shortener',
 ]
 
@@ -118,7 +119,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 BASE_LIST = '0123456789abcdefghijklmnñopqrstuvwxyz./:'
 BASE_DICT = dict((c, idx) for idx,c in enumerate(BASE_LIST))
